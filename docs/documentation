@@ -26,7 +26,7 @@
 
 # Visualization Workflow
 
-### Folium (Python)
+#Folium (Python)
 - Script: `scripts/Heatmap.py`  
 - Generates `signal_strength_heatmap.html` with:  
   - Heatmap weighted by RSRP.  
@@ -37,7 +37,7 @@
   - Average RSRP per CellID.  
   - LTE vs 5G comparison.
 
-### Kepler.gl
+# Kepler.gl
 - Upload `combined_cleaned_network_data.csv` to [Kepler.gl demo](https://kepler.gl/demo).  
 - Import `configs/kepler_config.json` to load saved setup.  
 - Layers configured:  
@@ -51,24 +51,22 @@
 
 ---
 
-## 📊 Analysis Approach
+# Analysis Approach
 - **Dead Zones**: Defined as RSRP < -110 dBm. Exported to `dead_zones.csv`.  
 - **Tower Performance**: Calculated average RSRP per CellID.  
 - **Network Comparison**: Compared LTE vs 5G signal strength distributions.  
 - **Handoff Tracking**: Observed PCI changes along route to identify tower transitions.
 
----
 
-## 📸 Deliverables
+# Deliverables
 - `visualizations/signal_strength_heatmap.html` → Folium map with analysis.  
 - `visualizations/kepler_map.html` → Kepler interactive map.  
 - `configs/kepler_config.json` → Saved Kepler setup.  
 - `docs/screenshots/` → LTE vs 5G coverage previews.  
 - `docs/methodology.md` → This documentation.
 
----
 
-## 📌 Notes
+# Notes
 - RSRP is the primary metric used (RSSI/RSRQ not available in dataset).  
 - PSC, TAC, PCI, SID included for tower identification and mobility analysis.  
 - GitHub Pages hosts the Kepler map for public access.  
