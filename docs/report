@@ -1,0 +1,55 @@
+# Cellular Network Performance Report
+
+# Overview
+This report summarizes the findings from the cellular network performance mapping project.  
+Data was collected using Network Cell Info Pro, cleaned using python for consistency, and visualized using Folium and Kepler.gl.  
+The goal was to identify coverage trends, dead zones, and handoffs across LTE and 5G networks.
+
+
+# Key Findings
+
+# 1. Coverage Trends
+- **LTE** provided broader coverage with moderate signal strength (average RSRP between -95 and -105 dBm).  
+- **5G** showed stronger signals in localized areas (average RSRP > -90 dBm) but limited geographic reach.  
+- Coverage clusters aligned with tower locations, visible through CellID and PCI segmentation.
+
+### 2. Dead Zones
+- Defined as **RSRP < -110 dBm**.  
+- Several dead zones were identified, particularly at route edges and areas with obstructed line-of-sight.  
+- Dead zones were exported to `dead_zones.csv` and visualized as red points in Folium and Kepler maps.
+
+### 3. Handoffs
+- Observed through **PCI changes** along the route.  
+- Smooth transitions occurred between LTE cells, while 5G handoffs were less frequent due to limited coverage.  
+- Tracking Area Code (TAC) changes confirmed mobility management across regions.
+
+### 4. Network Behavior
+- **LTE**: Stable coverage, frequent handoffs between cells.  
+- **5G**: Stronger localized signals, fewer handoffs, coverage gaps between towers.  
+- **UMTS/CDMA identifiers (PSC, SID)** appeared in limited samples, reflecting legacy network presence.
+
+
+# Limitations
+- Dataset collected along a single route → limited geographic scope.  
+- Movement during logging was constrained, leading to spatial clustering.  
+- Metrics like **RSSI** and **RSRQ** were not available, restricting deeper quality analysis.  
+- Environmental factors (buildings, terrain) not explicitly modeled.
+
+
+# Conclusions
+- RSRP alone is sufficient to highlight coverage strength and dead zones.  
+- PCI and TAC provide valuable insights into tower-level behavior and mobility.  
+- LTE remains dominant for coverage, while 5G offers stronger localized performance but with gaps.  
+- Interactive maps (Folium + Kepler.gl) successfully visualize trends and enable filter-based exploration.
+
+
+## Deliverables Recap
+- Folium Map → `visualizations/signal_strength_heatmap.html`  
+- Kepler Map → `visualizations/kepler_map.html` (hosted via GitHub Pages)  
+- Dead Zones CSV → `data/processed/dead_zones.csv`  
+- Config JSON → `configs/kepler_config.json`  
+- Screenshots → `docs/screenshots/`  
+
+
+# Demo Video
+A short walkthrough of the interactive map is provided here:  
