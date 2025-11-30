@@ -28,3 +28,40 @@ Mapping and analyzing cellular network performance using geotagged signal data
 - **Metrics Collected**: RSSI, RSRP, RSRQ, SINR, Cell ID, Network Type, GPS
 - **Export Format**: CSV
 - **Logging Method**: Walk test with GPS enabled, 1-second interval
+
+
+# Setup Instructions
+# Install Dependencies
+```bash
+pip install -r requirements.txt
+
+python scripts/Heatmap.py
+This will:
+- Generate an interactive map (visualizations/signal_strength_heatmap.html)
+- Print analysis summaries:
+- Dead zones (RSRP < -110 dBm)
+- Average RSRP per Cell ID
+- LTE vs 5G comparison
+
+
+# Kepler.gl Visualization
+- Using Kepler.gl demo.
+- Upload data/processed/combined_cleaned_network_data.csv.
+- HTML Export → visualizations/kepler_map.html (interactive map)
+
+
+Deliverables
+- Interactive Folium map (signal_strength_heatmap.html)
+- Interactive Kepler map (kepler_map.html)
+
+
+
+
+
+
+
+
+
+
+
+
