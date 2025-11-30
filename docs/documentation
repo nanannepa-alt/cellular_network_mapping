@@ -1,1 +1,74 @@
+# Methodology: Cellular Network Performance Mapping
 
+# Data Collection
+- Tool Used: Network Cell Info Pro (Android app)  
+- Metrics Captured:  
+  - Latitude & Longitude (GPS coordinates)  
+  - RSRP (Reference Signal Received Power) → main signal strength metric for LTE/5G  
+  - NetworkType (LTE, 5G, UMTS, CDMA)  
+  - CellID (unique tower identifier)  
+  - PCI (Physical Cell ID) → identifies individual LTE/5G cells  
+  - TAC (Tracking Area Code) → groups cells for mobility management  
+  - PSC (Primary Scrambling Code, UMTS)  
+  - SID (System ID, CDMA)  
+- Process:  
+  - Logged data while moving through target areas (walking/driving).  
+  - Exported raw CSV logs from the app.  
+
+
+# Data Cleaning with coding
+- Removed duplicate rows and incomplete entries.  
+- Standardized column names (`Latitude`, `Longitude`, `RSRP`, `NetworkType`, `CellID`, `PCI`, `TAC`, `PSC`, `SID`).  
+- Converted coordinates to decimal degrees for mapping.  
+- Verified spatial concentration (limited movement during logging → clusters of points).  
+- Saved cleaned dataset as `combined_cleaned_network_data.csv` in `data/processed/`.
+
+
+# Visualization Workflow
+
+### Folium (Python)
+- Script: `scripts/Heatmap.py`  
+- Generates `signal_strength_heatmap.html` with:  
+  - Heatmap weighted by RSRP.  
+  - Red markers for dead zones (RSRP < -110 dBm).  
+  - Popups showing CellID and PCI.  
+- Prints analysis summaries:  
+  - Dead zone count.  
+  - Average RSRP per CellID.  
+  - LTE vs 5G comparison.
+
+### Kepler.gl
+- Upload `combined_cleaned_network_data.csv` to [Kepler.gl demo](https://kepler.gl/demo).  
+- Import `configs/kepler_config.json` to load saved setup.  
+- Layers configured:  
+  - **Point Layer** → Radius by RSRP, Color by NetworkType, Tooltip with RSRP/CellID/PCI/TAC.  
+  - **Heatmap Layer** → Weighted by RSRP, Radius tuned for smooth coverage, Color scale (Red → Green).  
+- Filters:  
+  - NetworkType toggle (LTE vs 5G).  
+  - CellID isolation.  
+  - PCI exploration for handoffs.  
+- Exported as `kepler_map.html` (interactive) and `kepler_config.json` (reusable config).
+
+---
+
+## 📊 Analysis Approach
+- **Dead Zones**: Defined as RSRP < -110 dBm. Exported to `dead_zones.csv`.  
+- **Tower Performance**: Calculated average RSRP per CellID.  
+- **Network Comparison**: Compared LTE vs 5G signal strength distributions.  
+- **Handoff Tracking**: Observed PCI changes along route to identify tower transitions.
+
+---
+
+## 📸 Deliverables
+- `visualizations/signal_strength_heatmap.html` → Folium map with analysis.  
+- `visualizations/kepler_map.html` → Kepler interactive map.  
+- `configs/kepler_config.json` → Saved Kepler setup.  
+- `docs/screenshots/` → LTE vs 5G coverage previews.  
+- `docs/methodology.md` → This documentation.
+
+---
+
+## 📌 Notes
+- RSRP is the primary metric used (RSSI/RSRQ not available in dataset).  
+- PSC, TAC, PCI, SID included for tower identification and mobility analysis.  
+- GitHub Pages hosts the Kepler map for public access.  
