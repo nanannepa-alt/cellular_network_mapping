@@ -41,21 +41,20 @@
 - Upload `combined_cleaned_network_data.csv` to [Kepler.gl demo](https://kepler.gl/demo).  
 - Import `configs/kepler_config.json` to load saved setup.  
 - Layers configured:  
-  - **Point Layer** → Radius by RSRP, Color by NetworkType, Tooltip with RSRP/CellID/PCI/TAC.  
-  - **Heatmap Layer** → Weighted by RSRP, Radius tuned for smooth coverage, Color scale (Red → Green).  
+  - Point Layer → Radius by RSRP, Color by NetworkType, Tooltip with RSRP/CellID/PCI/TAC.  
+  - Heatmap Layer → Weighted by RSRP, Radius tuned for smooth coverage, Color scale (Red → Green).  
 - Filters:  
   - NetworkType toggle (LTE vs 5G).  
   - CellID isolation.  
   - PCI exploration for handoffs.  
 - Exported as `kepler_map.html` (interactive) and `kepler_config.json` (reusable config).
 
----
 
 # Analysis Approach
-- **Dead Zones**: Defined as RSRP < -110 dBm. Exported to `dead_zones.csv`.  
-- **Tower Performance**: Calculated average RSRP per CellID.  
-- **Network Comparison**: Compared LTE vs 5G signal strength distributions.  
-- **Handoff Tracking**: Observed PCI changes along route to identify tower transitions.
+- Dead Zones: Defined as RSRP < -110 dBm. Exported to `dead_zones.csv`.  
+- Tower Performance: Calculated average RSRP per CellID.  
+- Network Comparison: Compared LTE vs 5G signal strength distributions.  
+- Handoff Tracking: Observed PCI changes along route to identify tower transitions.
 
 
 # Deliverables
