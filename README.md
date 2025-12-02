@@ -1,5 +1,22 @@
-# cellular_network_mapping
-Mapping and analyzing cellular network performance using geotagged signal data
+Cellular_Network_Mapping
+
+What is this project about?
+This project is a cellular network performance mapping tool. It collects geotagged signal strength data from mobile devices, processes it, and generates interactive heatmaps that visualize network coverage and quality across geographic areas.
+
+What problem does it solve?
+Mobile users and network engineers often struggle to identify weak coverage zones, dropped connections, and handoff issues in real-world environments. Traditional carrier maps are generalized and do not reflect actual on-the-ground performance.
+This project solves the problem by providing data-driven, location-specific insights into cellular signal strength and quality, helping to:
+- Detect dead zones and poor coverage areas
+- Understand handoffs between cells
+- Compare performance across different network types (LTE, 5G, etc.
+
+How is the problem being solved?
+The solution combines data collection, cleaning, and visualization in a reproducible workflow:
+- Data Collection: Signal metrics (RSSI, cell ID, network type) are logged using mobile apps such as Network Cell Info Pro.
+- Data Cleaning: Raw logs are processed into structured CSV files stored in data/cleaned/ folder using a python script (combined clean data.py).
+- Visualization: A Python script (scripts/heatmap.py) uses pandas, folium, and geopandas to generate interactive heatmaps. Kepler.gl is used for advanced geospatial visualization, enabling dynamic filtering, layering, and exploration of cellular signal data.
+- Deployment: Docker ensures reproducibility; the project can be built and run consistently across environments.
+- Output: Results are saved as .html maps in the visualizations/ folder, which can be opened in any browser.
 
 # Project Objectives
 - Collect geotagged cellular signal data (RSSI, RSRP, RSRQ, network type, cell ID).
@@ -31,26 +48,7 @@ Mapping and analyzing cellular network performance using geotagged signal data
 - Logging Method: Walk test with GPS enabled, 1-second interval
 
 
-What is this project about?
-This project is a cellular network performance mapping tool. It collects geotagged signal strength data from mobile devices, processes it, and generates interactive heatmaps that visualize network coverage and quality across geographic areas.
 
-
-What problem does it solve?
-Mobile users and network engineers often struggle to identify weak coverage zones, dropped connections, and handoff issues in real-world environments. Traditional carrier maps are generalized and do not reflect actual on-the-ground performance.
-This project solves the problem by providing data-driven, location-specific insights into cellular signal strength and quality, helping to:
-- Detect dead zones and poor coverage areas
-- Understand handoffs between cells
-- Compare performance across different network types (LTE, 5G, etc.
-
-
-
-How is the problem being solved?
-The solution combines data collection, cleaning, and visualization in a reproducible workflow:
-- Data Collection: Signal metrics (RSSI, cell ID, network type) are logged using mobile apps such as Network Cell Info Pro.
-- Data Cleaning: Raw logs are processed into structured CSV files stored in data/cleaned/ folder.
-- Visualization: A Python script (scripts/heatmap.py) uses pandas, folium, and geopandas to generate interactive heatmaps. Kepler.gl is used for advanced geospatial visualization, enabling dynamic filtering, layering, and exploration of cellular signal data.
-- Deployment: Docker ensures reproducibility; the project can be built and run consistently across environments.
-- Output: Results are saved as .html maps in the visualizations/ folder, which can be opened in any browser.
 
 Project structure
 cellular-mapping-project/
