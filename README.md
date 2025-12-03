@@ -69,7 +69,7 @@ cellular-mapping-project/
 # Setup Instructions
 git clone https://github.com/nanannepa-alt/cellular_network_mapping.git
 
-# Install Dependencies
+# Dependencies
 ```bash
 pip install -r requirements.txt
 
