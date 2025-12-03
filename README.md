@@ -65,10 +65,10 @@ cellular-mapping-project/
 │   ├── heatmaps/                  # static & interactive heatmaps
 │   │   ├── signal_strength_heatmap.html
 │   └── kepler/                    # Kepler.gl exports
-│       └── kepler.html
+│       └── kepler.gl.html
 └── docs/                          # documentation & reports
-    ├── project_summary.md
-    └── limitations_and_trends.md
+    ├── documentation.md
+    └── report.md
 
 # Summary of Cellular Network Performance
 The analysis of the collected geotagged signal data provides a clear picture of how coverage, trends, limitations, and network behavior manifest in the study area. Coverage is generally strong in central zones, with reliable RSSI and RSRP values, but weaker signals appear at the periphery, highlighting potential dead zones. Because the data was gathered with limited movement, the coverage patterns are spatially clustered, offering a localized rather than comprehensive view of performance.
