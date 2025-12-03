@@ -50,20 +50,15 @@ The solution combines data collection, cleaning, and visualization in a reproduc
 
 # Project structure
 cellular-mapping-project/
-├── Dockerfile
-├── requirements.txt
-├── README.md                       # configuration files (e.g., logging, map styles)
-├── scripts/                       # Python scripts for processing & visualization
-│   ├── preprocess_data.py         # cleaning & combining raw logs
-│   ├── combined clean data.py         # compute RSSI, RSRP, RSRQ trends
+├── Dockerfile                     # containerized environment (repo is self-contained, reproducible and easy to share)
+├── requirements.txt               # lists all python packages of this project
+├── README.md                      # configuration files 
+├── scripts/                       # Python scripts for processing & visualization      
+│   ├── combined clean data.py     # compute RSSI, RSRP, RSRQ trends
 │   └──heatmap.py                  # visualization script
-├── notebooks/                     # Jupyter notebooks for exploratory analysis
-│   └── signal_analysis.ipynb
 ├── data/
 │   ├── raw/                       # raw signal logs from mobile app
-│   │   └── sample_log.csv
-│   ├── interim/                   # intermediate cleaned datasets
-│   │   └── cleaned_log.csv
+│   │   └── raw.csv        
 │   └── processed/                 # final datasets ready for visualization
 │       └── combined_cleaned_network_data.csv
 ├── visualizations/                # outputs of mapping & analysis
