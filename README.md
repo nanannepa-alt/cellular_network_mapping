@@ -60,13 +60,12 @@ cellular-mapping-project/
 │   ├── raw/                       # raw signal logs from mobile app
 │   │   └── raw.csv        
 │   └── processed/                 # final datasets ready for visualization
-│       └── combined_cleaned_network_data.csv
+│       └── processed.csv
 ├── visualizations/                # outputs of mapping & analysis
 │   ├── heatmaps/                  # static & interactive heatmaps
 │   │   ├── signal_strength_heatmap.html
-│   │   └── coverage_heatmap.png
 │   └── kepler/                    # Kepler.gl exports
-│       └── network_performance_map.html
+│       └── kepler.html
 └── docs/                          # documentation & reports
     ├── project_summary.md
     └── limitations_and_trends.md
