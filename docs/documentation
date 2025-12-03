@@ -21,7 +21,7 @@
 - Standardized column names (`Latitude`, `Longitude`, `RSRP`, `NetworkType`, `CellID`, `PCI`, `TAC`, `PSC`, `SID`).  
 - Converted coordinates to decimal degrees for mapping.  
 - Verified spatial concentration (limited movement during logging → clusters of points).  
-- Saved cleaned dataset as `combined_cleaned_network_data.csv` in `data/processed/`.
+- Saved cleaned dataset as `processed.csv` in `data/processed/`.
 
 
 # Visualization Workflow
@@ -30,7 +30,7 @@
 - Script: `scripts/Heatmap.py`  
 - Generates `signal_strength_heatmap.html` with:  
   - Heatmap weighted by RSRP.  
-  - Red markers for dead zones (RSRP < -110 dBm).  
+  - White markers for dead zones (RSRP < -110 dBm).  
   - Popups showing CellID and PCI.  
 - Prints analysis summaries:  
   - Dead zone count.  
@@ -38,8 +38,8 @@
   - LTE vs 5G comparison.
 
 # Kepler.gl
-- Upload `combined_cleaned_network_data.csv` to [Kepler.gl demo](https://kepler.gl/demo).  
-- Import `configs/kepler_config.json` to load saved setup.  
+- Uploaded `processed.csv` to [Kepler.gl demo](https://kepler.gl/demo).  
+- Imported `configs/kepler_config.json` to load saved setup.  
 - Layers configured:  
   - Point Layer → Radius by RSRP, Color by NetworkType, Tooltip with RSRP/CellID/PCI/TAC.  
   - Heatmap Layer → Weighted by RSRP, Radius tuned for smooth coverage, Color scale (Red → Green).  
@@ -47,11 +47,11 @@
   - NetworkType toggle (LTE vs 5G).  
   - CellID isolation.  
   - PCI exploration for handoffs.  
-- Exported as `kepler_map.html` (interactive) and `kepler_config.json` (reusable config).
+- Exported as `kepler_map.html` (interactive)
 
 
 # Analysis Approach
-- Dead Zones: Defined as RSRP < -110 dBm. Exported to `dead_zones.csv`.  
+- Dead Zones: Defined as RSRP < -110 dBm.  
 - Tower Performance: Calculated average RSRP per CellID.  
 - Network Comparison: Compared LTE vs 5G signal strength distributions.  
 - Handoff Tracking: Observed PCI changes along route to identify tower transitions.
