@@ -48,21 +48,47 @@ The solution combines data collection, cleaning, and visualization in a reproduc
 - Logging Method: Walk test with GPS enabled, 1-second interval
 
 
-
 # Project structure
 cellular-mapping-project/
 ├── Dockerfile
 ├── requirements.txt
-├── README.md
-├── scripts/
-│   └── heatmap.py
+├── README.md                       # configuration files (e.g., logging, map styles)
+├── scripts/                       # Python scripts for processing & visualization
+│   ├── preprocess_data.py         # cleaning & combining raw logs
+│   ├── combined clean data.py         # compute RSSI, RSRP, RSRQ trends
+│   └──heatmap.py                  # visualization script
+├── notebooks/                     # Jupyter notebooks for exploratory analysis
+│   └── signal_analysis.ipynb
 ├── data/
-│   ├── raw/                # raw signal logs
-│   └── processed/            # processed datasets
+│   ├── raw/                       # raw signal logs from mobile app
+│   │   └── sample_log.csv
+│   ├── interim/                   # intermediate cleaned datasets
+│   │   └── cleaned_log.csv
+│   └── processed/                 # final datasets ready for visualization
 │       └── combined_cleaned_network_data.csv
-└── visualizations/
-    └── signal_strength_heatmap.html/ Kepler.gl.html
-    
+├── visualizations/                # outputs of mapping & analysis
+│   ├── heatmaps/                  # static & interactive heatmaps
+│   │   ├── signal_strength_heatmap.html
+│   │   └── coverage_heatmap.png
+│   └── kepler/                    # Kepler.gl exports
+│       └── network_performance_map.html
+└── docs/                          # documentation & reports
+    ├── project_summary.md
+    └── limitations_and_trends.md
+
+# Summary of Cellular Network Performance
+The analysis of the collected geotagged signal data provides a clear picture of how coverage, trends, limitations, and network behavior manifest in the study area. Coverage is generally strong in central zones, with reliable RSSI and RSRP values, but weaker signals appear at the periphery, highlighting potential dead zones. Because the data was gathered with limited movement, the coverage patterns are spatially clustered, offering a localized rather than comprehensive view of performance.
+Trends across the dataset reveal that LTE is the dominant network type, with occasional handoffs to 5G and 3G depending on location. Signal strength is consistently higher in open areas, while attenuation is evident in dense urban or obstructed environments. Cell ID changes align with handoff points, confirming expected network behavior. Overall, the temporal stability of the data suggests steady connectivity during the logging period.
+The study does face limitations. The short duration and constrained mobility reduce the diversity of scenarios captured, meaning the dataset cannot fully represent broader geographic or temporal variations. Measurements are device‑specific and may not generalize across different hardware. Environmental factors such as weather, building materials, and interference were not systematically controlled, and the dataset does not include latency or uplink performance, which are critical for end‑to‑end analysis.
+Despite these constraints, the observed network behavior aligns with the principles of cellular communication. Handoffs occur smoothly, with adaptive resource allocation reflected in the interplay of RSSI, RSRP, and RSRQ values. The network demonstrates reliability, though performance varies with geography and environment. This highlights both the strengths and the challenges of cellular systems: while they maintain robust connectivity, localized weak zones and environmental influences remain persistent issues.
+
+
+
+
+
+
+
+
 
 
 
