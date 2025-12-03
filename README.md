@@ -4,7 +4,7 @@ What is this project about?
 This project is a cellular network performance mapping tool. It collects geotagged signal strength data from mobile devices, processes it, and generates interactive heatmaps that visualize network coverage and quality across geographic areas.
 
 What problem does it solve?
-Mobile users and network engineers often struggle to identify weak coverage zones, dropped connections, and handoff issues in real-world environments. Traditional carrier maps are generalized and do not reflect actual on-the-ground performance.
+Mobile users and network engineers often struggle to identify weak coverage zones, dropped connections, and handoff issues in real-world environments. Traditional carrier maps are generalized and do not reflect actual on the ground performance.
 This project solves the problem by providing data-driven, location-specific insights into cellular signal strength and quality, helping to:
 - Detect dead zones and poor coverage areas
 - Understand handoffs between cells
@@ -49,8 +49,7 @@ The solution combines data collection, cleaning, and visualization in a reproduc
 
 
 
-
-Project structure
+# Project structure
 cellular-mapping-project/
 ├── Dockerfile
 ├── requirements.txt
@@ -62,19 +61,19 @@ cellular-mapping-project/
 │   └── processed/            # processed datasets
 │       └── combined_cleaned_network_data.csv
 └── visualizations/
-    └── signal_strength_heatmap.html/ Kepler.gl
+    └── signal_strength_heatmap.html/ Kepler.gl.html
     
 
 
 
 # Setup Instructions
 git clone https://github.com/nanannepa-alt/cellular_network_mapping.git
-cd cellular_network_mapping
+
 # Install Dependencies
 ```bash
 pip install -r requirements.txt
 
-python scripts/Heatmap.py
+# Python scripts/Heatmap.py
 This:
 - Generates an interactive map (visualizations/signal_strength_heatmap.html)
 - Prints analysis summaries:
