@@ -50,25 +50,33 @@ The solution combines data collection, cleaning, and visualization in a reproduc
 
 # Project structure
 cellular-mapping-project/
+
 Dockerfile/ 
           requirements.txt 
-          README.md                      
+          README.md 
+          
 scripts/ 
        combined clean data.py 
-       heatmap.py                 
+       heatmap.py 
+       
 data/ 
      raw/ 
-        raw.csv        
+        raw.csv  
      processed/                 
               processed.csv
+              
 visualizations/                
               heatmaps/                  
                      signal_strength_heatmap.html
               kepler/                    
                     kepler.gl.html
+                    
 docs/                         
     documentation.md
     report.md
+
+
+
 
 # Summary of Cellular Network Performance
 The analysis of the collected geotagged signal data provides a clear picture of how coverage, trends, limitations, and network behavior manifest in the study area. Coverage is generally strong in central zones, with reliable RSSI and RSRP values, but weaker signals appear at the periphery, highlighting potential dead zones. Because the data was gathered with limited movement, the coverage patterns are spatially clustered, offering a localized rather than comprehensive view of performance.
