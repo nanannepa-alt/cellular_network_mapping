@@ -52,7 +52,7 @@ The solution combines data collection, cleaning, and visualization in a reproduc
 cellular-mapping-project/
 
 Dockerfile/ 
-          requirements.txt 
+          requirements.txt/ 
           README.md 
           
 scripts/ 
@@ -61,18 +61,18 @@ scripts/
        
 data/ 
      raw/ 
-        raw.csv  
+        raw.csv/  
      processed/                 
               processed.csv
               
 visualizations/                
               heatmaps/                  
-                     signal_strength_heatmap.html
+                     signal_strength_heatmap.html/
               kepler/                    
                     kepler.gl.html
                     
 docs/                         
-    documentation.md
+    documentation.md/
     report.md
 
 
