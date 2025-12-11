@@ -56,7 +56,7 @@ Dockerfile/
           README.md 
           
 scripts/ 
-       combined clean data.py 
+       combined clean data.py/ 
        heatmap.py 
        
 data/ 
