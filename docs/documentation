@@ -69,3 +69,9 @@
 - RSRP is the primary metric used (RSSI/RSRQ not available in dataset).  
 - PSC, TAC, PCI, SID included for tower identification and mobility analysis.  
 - GitHub Pages hosts the Kepler map for public access.  
+
+
+# Demo Video
+A short walkthrough of the project is provided here:  
+https://youtu.be/9tGOS_1G6w0
+
