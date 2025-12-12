@@ -19,7 +19,7 @@ The solution combines data collection, cleaning, and visualization in a reproduc
 - Output: Results are saved as .html maps in the visualizations/ folder, which can be opened in any browser.
 
 # Project Objectives
-- Collect geotagged cellular signal data (RSRP, RSRQ, network type, cell ID).
+- Collect geotagged cellular signal data (RSRP, network type, cell ID).
 - Visualize signal strength and coverage on interactive maps.
 - Identify dead zones, handoff patterns, and performance trends.
 
@@ -85,7 +85,7 @@ The study does face limitations. The short duration and constrained mobility red
 Despite these constraints, the observed network behavior aligns with the principles of cellular communication. Handoffs occur smoothly, with adaptive resource allocation reflected in the interplay of RSSI, RSRP, and RSRQ values. The network demonstrates reliability, though performance varies with geography and environment. This highlights both the strengths and the challenges of cellular systems: while they maintain robust connectivity, localized weak zones and environmental influences remain persistent issues.
 
 
-
+Watch video demo here: Cellular Network Mapping Demo https://youtu.be/9tGOS_1G6w0
 
 
 
