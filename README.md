@@ -19,7 +19,7 @@ The solution combines data collection, cleaning, and visualization in a reproduc
 - Output: Results are saved as .html maps in the visualizations/ folder, which can be opened in any browser.
 
 # Project Objectives
-- Collect geotagged cellular signal data (RSSI, RSRP, RSRQ, network type, cell ID).
+- Collect geotagged cellular signal data (RSRP, RSRQ, network type, cell ID).
 - Visualize signal strength and coverage on interactive maps.
 - Identify dead zones, handoff patterns, and performance trends.
 
